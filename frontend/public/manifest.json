@@ -1,0 +1,22 @@
+{
+  "short_name": "SahAI Field",
+  "name": "SahAI Field — Offline-First Edge AI for Rural Fieldwork",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#090d16",
+  "theme_color": "#0d9488",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "description": "Voice-enabled offline-first mobile AI for rural health, insurance, and banking field workers."
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "id": "VF-2026-0811",
+    "createdAt": "2026-09-18T16:10:19.967Z",
+    "updatedAt": "2026-09-18T16:10:19.967Z",
+    "worker": "Sunita Sharma (ASHA)",
+    "workerId": "ASH-UP-042",
+    "visitType": "Health Visit",
+    "location": "Rampur Village, Ward 4",
+    "beneficiary": "Sita Devi",
+    "status": "Completed",
+    "syncStatus": "Synced",
+    "transcript": "Visited Sita Devi at her home. She is 38 years old. She has been experiencing fever, persistent cough, and fatigue for the past 4 days. Blood pressure was measured at 125/82. Prescribed paracetamol and scheduled an appointment at the Community Health Centre on Thursday. Needs urgent follow-up.",
+    "structuredData": {
+      "name": "Sita Devi",
+      "age": 38,
+      "gender": "Female",
+      "issue": "Fever, persistent cough, and fatigue for 4 days",
+      "health_metrics": "BP 125/82, elevated temp",
+      "assistance_required": true,
+      "follow_up_required": true,
+      "priority": "High",
+      "estimated_loss": null
+    },
+    "ocrResults": {
+      "docType": "Ayushman Bharat Card",
+      "idNumber": "AB-9921-8834-0129",
+      "name": "Sita Devi",
+      "extractedText": "GOVERNMENT OF INDIA - AYUSHMAN BHARAT\nPM-JAY GOLD CARD\nName: Sita Devi\nID: AB-9921-8834-0129\nDOB: 1988\nGender: Female\nDistrict: Varanasi"
+    },
+    "notes": "Primary health kit provided. Family informed regarding free CHC transport.",
+    "syncedAt": "2026-09-18T19:12:07.146Z"
+  },
+  {
+    "id": "VF-TEST-001",
+    "createdAt": "2026-09-18T19:08:35.144Z",
+    "worker": "Sunita Sharma",
+    "workerId": "ASH-UP-042",
+    "location": "Rampur Village, Ward 4",
+    "beneficiary": "Sita Devi",
+    "visitType": "Health Visit",
+    "status": "Completed",
+    "transcript": "Patient has high fever and cough for 4 days.",
+    "structuredData": {
+      "name": "Sita Devi",
+      "age": 38,
+      "gender": "Female",
+      "issue": "High fever and cough"
+    },
+    "syncedAt": "2026-09-18T19:08:35.303Z",
+    "syncStatus": "Synced"
+  }
+]
