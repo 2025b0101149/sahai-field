@@ -243,7 +243,7 @@ export default function App() {
           onClick={() => setCurrentPage('settings')}
         >
           <Settings size={20} />
-          <span>NPU</span>
+          <span>Studio</span>
         </div>
       </nav>
 

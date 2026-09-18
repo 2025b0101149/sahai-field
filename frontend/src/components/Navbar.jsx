@@ -84,7 +84,7 @@ export default function Navbar({
             onClick={() => setCurrentPage('settings')}
           >
             <Settings size={16} />
-            <span>NPU / Config</span>
+            <span>Platform Studio</span>
           </button>
         </nav>
 

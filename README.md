@@ -1,11 +1,12 @@
-# SahAI Field — Offline-First AI for Rural Fieldwork
+# SahAI Field — Reusable Edge AI Platform for Rural Fieldwork
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-teal.svg)](https://opensource.org/licenses/MIT)
 [![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Vite%20%7C%20Express-0d9488.svg)](#technology-stack)
 [![Offline](https://img.shields.io/badge/Offline-IndexedDB%20Local-10b981.svg)](#offline-architecture)
 [![Target](https://img.shields.io/badge/Target-Qualcomm%20Snapdragon%20NPU-6366f1.svg)](#qualcomm-snapdragon-npu-integration)
+[![Interoperability](https://img.shields.io/badge/Standards-FHIR%20%7C%20ABDM%20%7C%20PMFBY-06b6d4.svg)](#multi-standard-interoperability)
 
-> **SahAI Field** is a full-stack, Edge AI-powered mobile application designed for rural health workers (ASHA/ANM), crop insurance surveyors, and banking correspondents (Bank Mitras). It converts spoken field observations and identity documents into structured digital records **completely on-device without internet connectivity**.
+> **SahAI Field** is a full-stack, modular **Reusable Edge AI Platform** engineered for frontline rural fieldwork. It empowers health workers (ASHA/ANM), crop insurance surveyors, banking correspondents (Bank Mitras), and disaster relief inspectors to convert natural spoken observations and identity documents into structured, standards-compliant digital records **completely on-device without internet connectivity**.
 
 ---
 
@@ -18,24 +19,27 @@ Field workers in rural villages face severe operational bottlenecks:
 
 ---
 
-## 2. The SahAI Field Solution
+## 2. The Reusable Edge AI Platform Solution
 
-SahAI Field operates as a **true offline-first system**:
+SahAI Field operates as a **true offline-first system and reusable platform**:
 1. **Spoken Observation:** The worker presses the microphone and speaks naturally in the field.
-2. **On-Device Whisper STT:** Speech is transcribed locally.
-3. **Quantized Local LLM:** A 4-bit quantized model structures freeform speech into a validated JSON schema (identifying symptoms, crop loss amounts, priority, and follow-ups).
-4. **On-Device Document OCR:** Identity cards (Aadhaar, PAN, Ayushman Bharat, Kisan Credit) are photographed and parsed locally.
-5. **Local IndexedDB Database:** The complete field record is stored persistently in the browser/device memory.
-6. **Optional Cloud Sync:** When connectivity is restored, records can be synced to a regional registry in one click.
+2. **On-Device Whisper STT:** Speech is transcribed locally with INT8 quantization.
+3. **Quantized Local LLM:** A 4-bit quantized model structures freeform speech into a validated JSON schema.
+4. **Pluggable Domain Templates:** Dynamic domain schemas for Maternal Health (ABDM), Crop Insurance (PMFBY), Banking KYC, and Disaster Relief.
+5. **On-Device Document OCR:** Identity cards (Aadhaar, PAN, Ayushman Bharat, Kisan Credit) are photographed and parsed locally.
+6. **Local IndexedDB Database:** Complete field records persist in browser storage across restarts without cloud dependency.
+7. **Edge AI Hardware Diagnostics:** On-device benchmark suite evaluates STT latency, LLM tok/sec, and NPU compute readiness.
+8. **Multi-Standard Interoperability:** 1-click export to CSV, ABDM / FHIR R4 Bundle, PMFBY claim schema, or full JSON.
+9. **Optional Cloud Sync:** When connectivity is restored, records can be synced to a regional registry in one click.
 
 ---
 
 ## 3. Technology Stack
 
-* **Frontend:** React 18, Vite 5, Custom Design System (Vanilla CSS with dark mode, glassmorphism, and responsive mobile-first controls), Lucide Icons, Canvas Confetti.
+* **Frontend:** React 18, Vite 5, Custom Design System (Vanilla CSS with dark mode, glassmorphism, responsive mobile-first controls), Lucide Icons, Canvas Confetti.
 * **Local Offline Storage:** IndexedDB managed via the `idb` library for ACID transactions, indexing, and persistent offline storage.
 * **On-Device Vision / OCR:** WebAssembly `Tesseract.js` engine + HTML5 Canvas image preprocessing (grayscale & contrast normalization).
-* **AI Service Abstraction Layer:** Modular adapters (`speechService`, `llmService`, `ocrService`, `storageService`, `syncService`).
+* **AI Service Abstraction Layer:** Modular adapters (`speechService`, `llmService`, `ocrService`, `storageService`, `syncService`, `templateService`, `benchmarkService`, `exportService`).
 * **Backend (Optional Sync Server):** Node.js, Express, CORS, resilient file-backed JSON database with optional MongoDB support.
 * **Target Hardware:** Qualcomm Snapdragon NPU (Hexagon NPU via Qualcomm AI Hub / QNN SDK).
 

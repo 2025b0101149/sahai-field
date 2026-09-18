@@ -14,10 +14,13 @@ import {
   AlertCircle,
   X,
   Database,
-  Printer
+  Printer,
+  FileSpreadsheet,
+  FileCode2
 } from 'lucide-react';
 import { storageService } from '../services/storageService';
 import { syncService } from '../services/syncService';
+import { exportService } from '../services/exportService';
 
 export default function RecordsPage({ 
   visits, 
@@ -107,7 +110,27 @@ export default function RecordsPage({
           </p>
         </div>
 
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <button 
+            className="btn btn-secondary" 
+            style={{ fontSize: '0.8rem', padding: '0.45rem 0.75rem' }}
+            onClick={() => exportService.exportAsCSV(visits)}
+            title="Export records to CSV spreadsheet"
+          >
+            <FileSpreadsheet size={14} style={{ color: 'var(--accent-emerald)' }} />
+            <span>CSV</span>
+          </button>
+
+          <button 
+            className="btn btn-secondary" 
+            style={{ fontSize: '0.8rem', padding: '0.45rem 0.75rem' }}
+            onClick={() => exportService.exportAsFHIRBundle(visits)}
+            title="Export ABDM / FHIR R4 Bundle"
+          >
+            <FileCode2 size={14} style={{ color: 'var(--accent-cyan)' }} />
+            <span>FHIR Bundle</span>
+          </button>
+
           {effectiveOnline && (
             <button 
               className="btn btn-primary" 
